@@ -1,0 +1,276 @@
+/* ── Google Font Import ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Reset & Base ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f4f8;
+  color: #1a202c;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  color: white;
+  padding: 24px 40px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  font-size: 14px;
+  color: #a0aec0;
+  margin-top: 6px;
+}
+
+/* ── Main Container ── */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ── Tab Switcher ── */
+.tabs {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  padding: 6px;
+  gap: 6px;
+  margin-bottom: 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: #718096;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background: #1a202c;
+  color: white;
+}
+
+/* ── File Uploader ── */
+.uploader {
+  background: white;
+  border: 2px dashed #cbd5e0;
+  border-radius: 16px;
+  padding: 48px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.uploader:hover {
+  border-color: #1a202c;
+  background: #f7fafc;
+}
+
+.uploader .icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.uploader h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.uploader p {
+  font-size: 14px;
+  color: #718096;
+  margin-bottom: 20px;
+}
+
+.upload-btn {
+  background: #1a202c;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.upload-btn:hover {
+  background: #2d3748;
+}
+
+.file-chosen {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #48bb78;
+  font-weight: 500;
+}
+
+/* ── Analyze Button ── */
+.analyze-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-bottom: 32px;
+}
+
+.analyze-btn:hover {
+  opacity: 0.9;
+}
+
+.analyze-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Score Card ── */
+.scorecard {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.overall-score {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.score-label {
+  font-size: 16px;
+  color: #718096;
+  margin-bottom: 28px;
+}
+
+.score-excellent { color: #48bb78; }
+.score-good      { color: #667eea; }
+.score-average   { color: #ed8936; }
+.score-poor      { color: #fc8181; }
+
+/* ── Category Bars ── */
+.category {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.category-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.category-score {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.progress-bar-bg {
+  background: #edf2f7;
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.8s ease;
+}
+
+/* ── Feedback Section ── */
+.feedback {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.error-message {
+  background: #fff5f5;
+  color: #9b2c2c;
+  border: 1px solid #feb2b2;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.feedback h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a202c;
+}
+
+.feedback-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.feedback-item:last-child {
+  border-bottom: none;
+}
+
+.feedback-icon {
+  font-size: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.feedback-text strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 3px;
+}
+
+.feedback-text span {
+  font-size: 13px;
+  color: #718096;
+}
