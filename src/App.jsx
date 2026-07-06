@@ -5,6 +5,7 @@ import ScoreCard from "./components/ScoreCard";
 import FeedbackSection from "./components/FeedbackSection";
 import { extractText } from "./utils/extractText";
 import { scoreResume } from "./utils/resumeScorer";
+import { scoreCV } from "./utils/cvScorer";
 import { scoreSOP } from "./utils/sopScorer";
 
 export default function App() {
@@ -29,7 +30,11 @@ export default function App() {
       if (!text || !text.trim()) {
         throw new Error("Could not extract text from this file. Please upload a PDF or DOCX file.");
       }
-      const scored = activeTab === "resume" ? scoreResume(text) : scoreSOP(text);
+      const scored = activeTab === "resume"
+        ? scoreResume(text)
+        : activeTab === "cv"
+          ? scoreCV(text)
+          : scoreSOP(text);
       setResults(scored);
     } catch (err) {
       setError(err?.message || "Failed to analyze file. Please try a PDF or DOCX.");
@@ -54,7 +59,7 @@ export default function App() {
           onClick={handleAnalyze}
           disabled={!file || loading}
         >
-          {loading ? "⏳ Analyzing..." : file ? `✨ Analyze My ${activeTab === "resume" ? "Resume" : "SOP"}` : "Upload a file first"}
+          {loading ? "⏳ Analyzing..." : file ? `✨ Analyze My ${activeTab === "resume" ? "Resume" : activeTab === "cv" ? "CV" : "SOP"}` : "Upload a file first"}
         </button>
 
         {error && <div className="error-message">{error}</div>}

@@ -3,10 +3,16 @@ export default function FileUploader({ file, setFile, activeTab }) {
     setFile(e.target.files[0]);
   }
 
+  const title = activeTab === "resume"
+    ? "Resume"
+    : activeTab === "cv"
+      ? "CV"
+      : "Statement of Purpose";
+
   return (
     <div className="uploader">
       <div className="icon">📂</div>
-      <h3>Upload your {activeTab === "resume" ? "Resume" : "Statement of Purpose"}</h3>
+      <h3>Upload your {title}</h3>
       <p>Supports PDF and Word (.docx) files</p>
       <label>
         <input
