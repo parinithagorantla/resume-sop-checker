@@ -1,7 +1,17 @@
-export default function FileUploader({ file, setFile, activeTab }) {
+import { useEffect, useRef } from "react";
+
+export default function FileUploader({ file, setFile, activeTab, inputKey }) {
+  const inputRef = useRef(null);
+
   function handleFileChange(e) {
     setFile(e.target.files[0]);
   }
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
+  }, [inputKey, activeTab]);
 
   const title = activeTab === "resume"
     ? "Resume"
@@ -16,6 +26,8 @@ export default function FileUploader({ file, setFile, activeTab }) {
       <p>Supports PDF and Word (.docx) files</p>
       <label>
         <input
+          key={inputKey}
+          ref={inputRef}
           type="file"
           accept=".pdf,.docx"
           onChange={handleFileChange}
