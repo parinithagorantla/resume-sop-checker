@@ -46,7 +46,7 @@ export default function App() {
   return (
     <>
       <div className="header">
-        <h1>📄 Resume & SOP Checker</h1>
+        <h1>📄 Resume, SOP & Cover Letter Checker</h1>
         <p>Upload your document and get an instant strength score</p>
       </div>
 

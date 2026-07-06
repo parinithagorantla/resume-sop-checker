@@ -22,4 +22,5 @@ test('scoreCV returns a strong score for a structured CV', () => {
   assert.ok(result.score >= 60, 'expected a strong score for a structured CV');
   assert.ok(result.categories.some((category) => category.name === 'Professional Summary'));
   assert.ok(result.feedback.some((item) => item.title === 'Contact Information'));
+  assert.ok(result.categories[0].details, 'expected category details for accordion feedback');
 });
